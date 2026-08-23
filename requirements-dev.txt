@@ -1,1 +1,4 @@
-
+-r requirements.txt
+pytest&gt;=8,&lt;9
+moto[kinesis,s3]&gt;=5,&lt;6
+ruff&gt;=0.6,&lt;1
