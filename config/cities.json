@@ -1,6 +1,4 @@
-[
-{&quot;city&quot;: &quot;Pune&quot;, &quot;latitude&quot;: 18.5204, &quot;longitude&quot;: 73.8567, &quot;timezone&quot;: &quot;Asia/Kolkata&quot;},
-{&quot;city&quot;: &quot;Mumbai&quot;, &quot;latitude&quot;: 19.0760, &quot;longitude&quot;: 72.8777, &quot;timezone&quot;: &quot;Asia/Kolkata&quot;},
-{&quot;city&quot;: &quot;Bengaluru&quot;, &quot;latitude&quot;: 12.9716, &quot;longitude&quot;: 77.5946, &quot;timezone&quot;: &quot;Asia/Kolkata&quot;},
-{&quot;city&quot;: &quot;Hyderabad&quot;, &quot;latitude&quot;: 17.3850, &quot;longitude&quot;: 78.4867, &quot;timezone&quot;: &quot;Asia/Kolkata&quot;}
-]
+[{"city": "Pune","latitude": 18.5204,"longitude": 73.8567, "timezone": "Asia/Kolkata"},
+  {"city": "Mumbai","latitude": 19.0760, "longitude": 72.8777, "timezone": "Asia/Kolkata"},
+  {"city": "Bengaluru","latitude": 12.9716,"longitude": 77.5946,"timezone": "Asia/Kolkata"},
+  { "city": "Hyderabad","latitude": 17.3850,"longitude": 78.4867,"timezone": "Asia/Kolkata"}]
