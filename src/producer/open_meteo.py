@@ -12,30 +12,13 @@ class OpenMeteoClient:
     def __init__(self, timeout_seconds: int = 30):
         self.timeout_seconds = timeout_seconds
 
-    @retry(stop=stop_after_attempt(3),
-           wait=wait_exponential(multiplier=1, min=1, max=8))
+    @retry(stop=stop_after_attempt(3),wait=wait_exponential(multiplier=1, min=1, max=8))
     def _get(self, params: dict[str, Any]) -> dict:
-        response = requests.get(
-            FORECAST_URL,
-            params=params,
-            timeout=self.timeout_seconds
-        )
+        response = requests.get(FORECAST_URL,params=params,timeout=self.timeout_seconds)
         response.raise_for_status()
         return response.json()
 
-    def fetch_city(self, city: dict, forecast_days: int = 3) -> list[arams = {
-            "latitude": city["latitude"],
-            "longitude": city["longitude"],
-            "hourly": ",".join([
-                "temperature_2m",
-                "precipitation_probability",
-                "precipitation",
-                "wind_speed_10m"
-            ]),
-            "forecast_days": forecast_days,
-            "past_days": 1,
-            "timezone": "UTC"
-        }
+    def fetch_city(self, city: dict, forecast_days: int = 3) -> list[arams = {"latitude": city["latitude"],"longitude": city["longitude"],"hourly": ",".join(["temperature_2m","precipitation_probability","precipitation","wind_speed_10m"]),"forecast_days": forecast_days,"past_days": 1,"timezone": "UTC"}
 
         payload = self._get(params)
         hourly = payload["hourly"]
