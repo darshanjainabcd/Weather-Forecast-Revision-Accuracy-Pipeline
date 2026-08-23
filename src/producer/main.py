@@ -36,3 +36,23 @@ def publish_events(events: list[dict], mode: str = "kinesis", settings: Settings
         sent += len(batch)
 
     return sent
+
+
+def run(forecast_days: int = 3, mode: str = "kinesis") -> int:
+    configure_logging()
+    client = OpenMeteoClient()
+    cities = load_cities()
+
+    all_events: list[dict] = []
+    for city in cities:
+        events = client.fetch_city(city, forecast_days=forecast_days)
+        logger.info("city=%s events=%s", city["city"], len(events))
+        all_events.extend(events)
+
+    sent = publish_events(all_events, mode=mode)
+    logger.info("published_events=%s mode=%s", sent, mode)
+    return sent
+
+
+if __name__ == "__main__":
+    run()
