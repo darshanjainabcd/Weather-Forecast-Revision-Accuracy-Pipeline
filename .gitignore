@@ -1,0 +1,17 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.env
+.idea/
+.vscode/
+.DS_Store
+dist/
+build/
+*.egg-info/
+terraform.tfstate
+terraform.tfstate.*
+.terraform/
+crash.log
